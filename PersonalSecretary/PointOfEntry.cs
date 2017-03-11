@@ -14,7 +14,7 @@ namespace PersonalSecretary
 {
     public partial class PointOfEntry : Form
     {
-        private static int Stage = 1;//стадии проверки системы , начинаем с первой
+        private static int Stage = 4;//стадии проверки системы , начинаем с первой
         private static int MaxStage = 99;//максимальная стадия проверки системы
         private static string FileString = "";
         public PointOfEntry()
