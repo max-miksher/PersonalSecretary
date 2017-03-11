@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PointOfEntry));
             this.LabelImg = new System.Windows.Forms.PictureBox();
             this.LabelText = new System.Windows.Forms.Label();
             this.StatusBar = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.webControl1 = new Awesomium.Windows.Forms.WebControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LabelImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +86,22 @@
             this.CloseButton.Visible = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(246, 203);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(302, 135);
+            this.textBox1.TabIndex = 4;
+            // 
+            // webControl1
+            // 
+            this.webControl1.Location = new System.Drawing.Point(307, 27);
+            this.webControl1.Size = new System.Drawing.Size(75, 23);
+            this.webControl1.Source = new System.Uri("http://vk.com/", System.UriKind.Absolute);
+            this.webControl1.TabIndex = 5;
+            this.webControl1.DocumentReady += new Awesomium.Core.DocumentReadyEventHandler(this.Awesomium_Windows_Forms_WebControl_DocumentReady);
+            // 
             // PointOfEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +109,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(560, 350);
             this.ControlBox = false;
+            this.Controls.Add(this.webControl1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.LabelText);
@@ -114,5 +135,7 @@
         private System.Windows.Forms.Label LabelText;
         private System.Windows.Forms.Label StatusBar;
         private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.TextBox textBox1;
+        private Awesomium.Windows.Forms.WebControl webControl1;
     }
 }

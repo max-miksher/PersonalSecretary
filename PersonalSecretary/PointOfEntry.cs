@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Awesomium.Core;
+using System;
 using System.Windows.Forms;
+using VarDumpDll;
 
 namespace PersonalSecretary
 {
@@ -17,9 +10,17 @@ namespace PersonalSecretary
         private static int Stage = 4;//стадии проверки системы , начинаем с первой
         private static int MaxStage = 99;//максимальная стадия проверки системы
         private static string FileString = "";
+        
+        
         public PointOfEntry()
         {
             InitializeComponent();
+            //WebView views = WebCore.CreateWebView(640, 480);
+            //this.webControl1.Source = new Uri("https://vk.com");
+            //.Source = new Uri("https://vk.com");
+
+            //bool aa = this.webControl1.IsLoading;
+            
         }
         ///<summary>
         ///Этот метод SetText передает текст состояния проверки системы при запуске программы
@@ -135,6 +136,13 @@ namespace PersonalSecretary
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Awesomium_Windows_Forms_WebControl_DocumentReady(object sender, DocumentReadyEventArgs e)
+        {
+            string a = this.webControl1.HTML;
+
+            this.textBox1.Text = a;
         }
     }
 }
