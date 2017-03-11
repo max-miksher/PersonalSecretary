@@ -66,8 +66,9 @@
             this.StatusBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(80)))), ((int)(((byte)(117)))));
             this.StatusBar.Location = new System.Drawing.Point(295, 187);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(0, 13);
+            this.StatusBar.Size = new System.Drawing.Size(13, 13);
             this.StatusBar.TabIndex = 2;
+            this.StatusBar.Text = "1";
             // 
             // CloseButton
             // 
